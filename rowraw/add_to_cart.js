@@ -42,4 +42,12 @@ $("#totalProducts > table > tbody").each(function (index, tbody) {
       }
     });
 });
-console.log(products);
+
+dataLayer.push({
+  event: "addToCart",
+  ecommerce: {
+    add: {
+      products: products,
+    },
+  },
+});
