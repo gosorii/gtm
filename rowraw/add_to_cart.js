@@ -12,14 +12,14 @@ $("#totalProducts > table > tbody").each(function (_, tbody) {
     .each(function (_, tr) {
       if ($(tr).hasClass("option_product")) {
         // 옵션이 있는 경우 (의류)
-        var nameWithOption = $(tr).find(".product").text();
+        var nameWithOption = $(tr).find("p.product").text();
 
         // '-' 를 기준으로 잘라서 옵션을 분리한다.
         var splitted = nameWithOption.split(" - ");
         var variant = splitted[1];
 
         // 각 항목 별 수량 추출
-        var quantity = parseInt($(tr).find(".quantity_opt").val());
+        var quantity = parseInt($(tr).find("input.quantity_opt").val());
 
         products.push({
           id: iProductNo,
