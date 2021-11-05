@@ -5,12 +5,12 @@
 var products = [];
 
 // table의 tbody를 순회하며 tr을 가져옴.
-$("#totalProducts > table > tbody").each(function (index, tbody) {
+$("#totalProducts > table > tbody").each(function (_, tbody) {
   if ($(tbody).css("display") === "none") return;
   $(tbody)
     .find("tr")
-    .each(function (index, tr) {
-      if ($(tr).find(".quantity_opt").val()) {
+    .each(function (_, tr) {
+      if ($(tr).hasClass("option_product")) {
         // 옵션이 있는 경우 (의류)
         var nameWithOption = $(tr).find(".product").text();
 
@@ -24,7 +24,7 @@ $("#totalProducts > table > tbody").each(function (index, tbody) {
         products.push({
           id: iProductNo,
           name: product_name,
-          price: product_price,
+          price: parseInt(product_price),
           category: iCategoryNo,
           variant: variant,
           quantity: quantity,
