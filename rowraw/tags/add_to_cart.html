@@ -7,6 +7,7 @@
 
   // table의 tbody를 순회하며 tr을 가져옴.
   $("#totalProducts > table > tbody").each(function (_, tbody) {
+    // mac & chrome인 경우 displaynone table이 있음.. -> 이때는 무시해야 함
     if ($(tbody).css("display") === "none") return;
     $(tbody)
       .find("tr")
