@@ -1,6 +1,8 @@
 function get_products() {
   // 최종적으로 장바구니에 담기 위해 사용되는 변수
   var products = [];
+  
+  var product_sale_price = (typeof product_sale_price == 'undefined') ? parseInt(product_price) : product_sale_price;
 
   // table의 tbody를 순회하며 tr을 가져옴.
   $("#totalProducts > table > tbody").each(function (_, tbody) {
